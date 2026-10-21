@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => !data.draft);
+  return projects.map(project => ({ params: { id: project.id }, props: { project } }));
+}
+const { project } = Astro.props;
+const { Content } = await render(project);
+const p = project.data;
+---
+<BaseLayout title={`${p.title} — YOUR NAME`} description={p.description}>
+  <article class="wrap project-detail">
+    <a class="text-link" href="/work/">← Back to all work</a>
+    <div class="video-frame" style="margin-top:28px"><iframe src={`https://www.youtube-nocookie.com/embed/${p.youtubeId}?rel=0`} title={p.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+    <div class="detail-columns"><div><div class="eyebrow">{p.category} · {p.date.getFullYear()}</div><h1>{p.title}</h1><p>{p.description}</p><div class="project-copy"><Content /></div></div><aside class="detail-facts">{p.client && <div class="fact"><small>Client</small>{p.client}</div>}{p.role && <div class="fact"><small>My role</small>{p.role}</div>}<div class="fact"><small>Category</small>{p.category}</div><div class="fact"><small>Year</small>{p.date.getFullYear()}</div><div class="fact"><small>Next step</small><a class="text-link" href="/contact/">Make something together ↗</a></div></aside></div>
+  </article>
+</BaseLayout>

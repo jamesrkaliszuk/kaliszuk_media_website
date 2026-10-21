@@ -1,0 +1,14 @@
+---
+const { project } = Astro.props;
+const p = project.data;
+const href = `/projects/${project.id}/`;
+const thumb = p.thumbnail || (p.youtubeId ? `https://img.youtube.com/vi/${p.youtubeId}/hqdefault.jpg` : '');
+---
+<a class="project-card" href={href}>
+  <div class="thumb">
+    {thumb ? <img src={thumb} alt={`Thumbnail for ${p.title}`} loading="lazy" /> : <div class="thumb-placeholder">PROJECT IMAGE</div>}
+  </div>
+  <div class="project-meta"><span>{p.category}</span><span>{p.date.getFullYear()}</span></div>
+  <h3>{p.title}</h3>
+  <p>{p.description}</p>
+</a>
