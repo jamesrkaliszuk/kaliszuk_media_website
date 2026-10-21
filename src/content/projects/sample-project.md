@@ -15,5 +15,5 @@ thumbnail: /media/Screenshot 2024-12-16 194719.png
 featured: true
 client: Brightside Fabric
 role: Director · Camera · Edit
-draft: true
+draft: false
 ---
