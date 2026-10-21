@@ -1,13 +1,19 @@
 ---
-title: "Sample Project — Replace Me"
-description: "A placeholder project to demonstrate how your portfolio will work. Replace these details with one of your own videos."
-date: 2026-10-20
-category: "Branded Content"
-youtubeId: "dQw4w9WgXcQ"
-thumbnail: ""
+title: Brightside Fabric Co.
+description: >-
+  Brightside Fabric Co. is a small business selling fabric to sewing companies
+  and sewing enthusiasts. 
+
+
+  You can check out their fabric store here:
+
+  www.brightsidefabric.com
+date: 2022-01-06
+category: Branded Content
+youtubeId: lSg0dYBFR04
+thumbnail: /media/Screenshot 2024-12-16 194719.png
 featured: true
-client: ""
-role: "Director · Camera · Edit"
+client: Brightside Fabric
+role: Director · Camera · Edit
 draft: true
 ---
-This is a sample project. Replace this description and the YouTube video ID in Pages CMS, then uncheck “Keep hidden as draft” when you're ready to publish it.
