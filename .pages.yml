@@ -1,0 +1,69 @@
+media:
+  input: public/media
+  output: /media
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    filename: '{primary}.md'
+    view:
+      fields: [title, date, category, featured]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: description
+        label: Short description
+        type: text
+        required: true
+      - name: date
+        label: Project date
+        type: date
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - Commercial
+            - Branded Content
+            - Music Video
+            - Event
+            - Documentary
+            - Short Film
+            - Other
+      - name: youtubeId
+        label: YouTube video ID
+        type: string
+        required: true
+        description: 'Paste only the video ID, not the full URL. Example: dQw4w9WgXcQ'
+      - name: thumbnail
+        label: Thumbnail image
+        type: image
+      - name: featured
+        label: Feature on homepage
+        type: boolean
+        default: false
+      - name: client
+        label: Client (optional)
+        type: string
+      - name: role
+        label: Your role (optional)
+        type: string
+      - name: draft
+        label: Keep hidden as draft
+        type: boolean
+        default: false
+      - name: body
+        label: Project details
+        type: rich-text
+settings:
+  content:
+    merge: true
